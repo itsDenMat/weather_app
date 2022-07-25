@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Times New Roman';
+    background: url(./assets/background.jpg) no-repeat;
+    background-size: cover;
+}
+
+/* Main container */
+.container {
+    /* border: solid black; */
+    margin-left: auto;
+    max-width: 960px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.row {
+    align-items: center;
+    text-align: center !important;
+}
+
+/* Left side container */
+#searchBar {
+    margin: 20px 0px 0px 0px;
+    padding: 20px;
+    background-color: #00000051;
+    border-radius: 5px;
+    box-shadow: 2.5px 5px 4px black;
+    align-items: center;
+    text-align: center;
+    color: #ffffffb6;
+}
+
+.app-name {
+    font-size: 45px;
+    color: #ffffffb6;
+    align-items: center;
+    text-align: center;
+}
+
+.app-name:hover {
+    color: #ffffffb6;
+    text-shadow: 0 0 5px lightcoral, 0 0 10px lightcoral;
+}
+
+#greeting {
+    font-size: 20px;
+}
+
+#display_clock {
+    font-size: 15px;
+}
+
+/* Line below clock */
+hr {
+    margin: 10px 50px;
+    background-color: #ffffffb6;
+}
+
+/* List/history of searched cities */
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding: 0px;
+}
+
+li {
+    background-color: #ffffffa9;
+    color: rgb(38, 38, 38);
+    font-size: 15px;
+    list-style-type: none;
+    text-align: center;
+    align-items: center;
+    padding: 5px;
+    margin: 10px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+#historybox {
+    align-items: center
+    text-align: center;
+}
+
