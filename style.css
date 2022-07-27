@@ -11,8 +11,8 @@ body {
 }
 
 /* Main container */
-.container {
-    /* border: solid black; */
+.wrapper {
+    margin-right: auto;
     margin-left: auto;
     max-width: 960px;
     padding-right: 10px;
@@ -27,11 +27,11 @@ body {
 /* Left side container */
 #searchBar {
     margin: 20px 0px 0px 0px;
+    max-height: 100%;
     padding: 20px;
     background-color: #00000051;
     border-radius: 5px;
     box-shadow: 1px 2px 5px black;
-    /* box-shadow: 2.5px 5px 4px black; */
     align-items: center;
     text-align: center;
     color: #ffffffb6;
@@ -118,4 +118,115 @@ li {
     font-size: 12px;
     /* position: relative;
     flex-wrap: wrap; */
+}
+
+/* Clear history button */
+.clear-history {
+    background-color: #0f28c9;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    align-items: center;
+    font-size: 12px;
+    position: relative;
+    flex-wrap: wrap;
+    border: none;
+}
+
+/* Right container with welcome message */
+.welcome_box {
+    border-radius: 5px;
+    background-color: #00000051;
+    border: none;
+    margin: 20px 0px 0px 0px;
+    padding: 300px 0px;
+    box-shadow: 1px 2px 5px black;
+    color: #ffffffb6;
+}
+
+/* Error message box when no city entered */
+.error_box {
+    border-radius: 5px;
+    background-color: #00000051;
+    border: none;
+    padding: 300px 0px 300px 60px;
+    margin: 20px 0 0 0;
+    box-shadow: 1px 2px 5px black;
+    color: #ffffffb6;
+}
+
+/* Forecast container */
+#forecastBox {
+    border-radius: 5px;
+    background-color: #00000051;
+    border: none;
+    padding: 140px 0px 160px 20px;
+    margin: 20px 0 0 0;
+    box-shadow: 1px 2px 5px black;
+    color: #ffffffb6;
+}
+
+ #errorMessage {
+    font-size: 30px;
+ }
+
+.resultsLine {
+    font-size: 30px;
+    margin: 0;
+}
+
+/* Temperature display */
+#tempDisplay {
+    padding-left: 70px;
+    margin-top: 10px;
+    color: #ffffffb6;
+    font-size: 40px;
+    font-weight: 100;
+    text-align: left;
+    align-items: left;
+}
+
+#temperature {
+    font-size: 100px;
+    font-weight: 100;
+}
+
+/* UV display */
+#uv {
+    padding: 5px;
+}
+
+.uvLow {
+    background-color: green;
+}
+
+.uvModerate {
+    background-color: yellow;
+}
+
+.uvHigh {
+    background-color: orange;
+}
+
+.uvVeryHigh {
+    background-color: red;
+}
+
+.uvExtremelyHigh {
+    background-color: purple;
+}
+
+/* Five-Day forecast */
+/* .row.display-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row.display-flex > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+} */
+.forecast-list {
+    align-items: center;
+    float: left;
 }

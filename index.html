@@ -5,40 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <meta name="Description" content="Enter your description here" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
-
     <link rel="stylesheet" href="./style.css">
+    
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&family=Roboto:wght@300&display=swap" rel="stylesheet">
 
-    <title>Weather Forecast</title>
+    <title>Weathery App</title>
 </head>
 
 <body>
-    <!-- Main container -->
-    <div class="container">
+    <!-- Whole page container -->
+    <div class="wrapper">
         <div class="row">
-            <!-- Left side container for search bar and history -->
+
+            <!-- Left column/container for title, time, search bar, and list of searched city -->
             <div id="searchBar" class="col-lg-3">
-                <div class="header">
+                <!-- Container for top part of left column -->
+                <div class="dashboardHeader">
+
+                    <!-- APP Name -->
                     <nav class="navbar">
-                        <a class="app-name" href="index.html" style="text-decoration: none"><span>Weathery <br>App</span> </a>
+                        <a class="navbar-brand" href="index.html" style="text-decoration: none"><span>the <br>
+                                WEATHERY</span> </a>
                     </nav>
+
                     <br><br>
-                    <!-- Greeting box for morning, afternoon, or night -->
+
+                    <!-- Greeting that changes depending on the time -->
                     <div id="greeting">Welcome</div>
-                    <!-- Display current time -->
-                    <p id="display_clock" class="clock"></p>
+                    <!-- Display for digital time -->
+                    <p id="DigitalCLOCK" class="clock"></p>
                     <hr>
                 </div>
+
                 <br>
-                <!-- Container for input field and button -->
+                
+                <!-- Container for search bar with button -->
                 <div class="input-group mb-3">
-                    <input id="city-input" type="text" class="form-control" placeholder="Enter Name of City"
+                    <input id="city-input" type="text" class="form-control" placeholder="Enter a city name"
                         aria-label="Enter city name">
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="button" id="search-button">
@@ -47,56 +57,69 @@
                     </div>
                     <br>
                 </div>
+
+                <!-- List of searched city -->
                 <ul id="history"></ul>
-                <!-- History box/list -->
                 <div id="historybox" style="display:none">
                     <br>
                     <button class="btn btn-primary mb-3" type="button" id="clear-history">Clear history</button>
                 </div>
             </div>
 
-            <!-- Right/main container for weather forecast information-->
+            <!-- Right column/container for initial welcome message and detailed weather forecast -->
             <div class="col-lg-9">
-                <!-- Display error message empty container -->
-                <div class="error_box" id="errorMessage" style="display:none"></div>
-                <!-- Container with initial greeting -->
-                <div class="welcome_box">
-                    <br>
-                    <h2>Welcome to Weathery</h2>
-                    <hr>
-                    <h4>Type in a city to get weather information.</h4>
+                <!-- Error message -->
+                <div class="errorContainer" id="errorMessage" style="display:none">
                 </div>
-                <!-- Container to display city name, temp, and other information -->
-                <div id="forecastBox" class="col-12 " style="display:none">
-                    <!-- Displays city name -->
+                <!-- Initial welcome message -->
+                <div class="welcomeContainer">
+                    <br>
+                    <h2>Welcome to the Weathery App</h2>
+                    <hr>
+                    <h4>Type in a city in the search bar <br> to get detailed weather information.</h4>
+                </div>
+
+                <!-- Container for detailed weather info about the searched city -->
+                <div id="todayForecastContainer" class="col-12 " style="display:none">
+                    <!-- Displays name of the city that was searched -->
                     <span id="city-name" class="resultsLine "></span>
-                    <div class="weather_box">
-                        <!-- Container for all relevant information about the weather for the day -->
+                    <!-- Displays temperature and other information about the current weather -->
+                    <div class="DisplayWeathercontainer">
                         <div class="row">
+
                             <div id="tempDisplay" class="col-sm">
+                                <!-- Temperature display -->
                                 <div class="temperature">
                                     <p id="temperature"></p>
                                 </div>
                             </div>
+
+                            <!-- Container set to the right to display info -->
                             <div class="col-sm">
+                                <!-- Humidity display -->
                                 <div class="humidity">
                                     <p id="humidity"></p>
                                 </div>
+                                <!-- Wind display -->
                                 <div class="wind-speed">
                                     <p id="wind-speed"></p>
                                 </div>
+                                <!-- Feels like display -->
                                 <div class="feels-like">
                                     <p id="feels-like"></p>
                                 </div>
+                                <!-- UV index display -->
                                 <div class="index-uv">
                                     <p id="index-uv"></p>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <hr>
-                    <!-- Five day forecast display -->
-                    <div id="five_Box" class="col-12">
+
+                    <!-- Container to display forecast-->
+                    <div id="fiveDayDiv" class="col-12">
                         <h3>5 Day Weather</h3>
                         <div class="row">
                             <div id="forcast-list"></div>
@@ -111,7 +134,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
