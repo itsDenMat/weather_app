@@ -1,232 +1,326 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Roboto', 'Times New Roman';
-    background: url(./assets/background.jpg) no-repeat;
-    background-size: cover;
+	font-family: "Open Sans", sans-serif;
+	font-size: 16px;
+	line-height: 1;
+	background: url(./assets/background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	color: #ffffff93;
 }
 
-/* Main container */
+/* Whole container that has the whole page */
 .wrapper {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 960px;
-    padding-right: 10px;
-    padding-left: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 960px;
+	padding-right: 10px;
+	padding-left: 10px;
 }
 
-.row {
-    align-items: center;
-    text-align: center !important;
-}
-
-/* Left side container */
+/* THIS SECTION IS THE WHOLE LEFT COLUMN OF THE PAGE */
+/* Left container */
 #searchBar {
-    margin: 20px 0px 0px 0px;
-    max-height: 100%;
-    padding: 20px;
-    background-color: #00000051;
-    border-radius: 5px;
-    box-shadow: 1px 2px 5px black;
-    align-items: center;
-    text-align: center;
-    color: #ffffffb6;
+	margin: 20px 0px 0px 0px;
+	padding: 20px;
+	background-color: #00000051;
+	border-radius: 5px;
+	box-shadow: 2.5px 5px 4px #000000;
+	align-items: center;
+	text-align: center;
+	color: #ffffffbd;
 }
 
-.app-name {
-    font-size: 45px;
-    color: #ffffffb6;
-    align-items: center;
-    text-align: center;
+/* APP name in left box */
+.navbar-brand {
+	font-size: 45px;
+	color: #ffffffbd;
+	align-items: center;
+	text-align: center;
+	font-family: "Rajdhani", sans-serif;
 }
 
-.app-name:hover {
-    color: #ffffffb6;
-    text-shadow: 0 0 5px lightcoral, 0 0 10px lightcoral;
+a {
+	font-size: 40px;
+	color: rgb(57, 57, 57);
+	font-family: "Rajdhani", sans-serif;
 }
 
-/* Welcome greeting */
+/* Hover design for APP name in left box */
+.navbar-brand:hover {
+	color: #0353b5;
+	text-decoration: underline;
+}
+
+/* Greeting in left box that says GOOD MORNING */
 #greeting {
-    font-size: 20px;
+	font-size: 20px;
+	font-family: "Rajdhani", sans-serif;
 }
 
-/* Clock display */
-#display_clock {
-    font-size: 15px;
+/* Size of clock display under GOOD MORNING */
+#DigitalCLOCK {
+	font-size: 15px;
 }
 
-/* Line below clock */
+/* Underline stlye */
 hr {
-    margin: 10px 50px;
-    background-color: #ffffffb6;
+	margin: 10px 50px 10px 50px;
+	background-color: rgba(255, 255, 255, 0.249);
 }
 
-/* List/history of searched cities */
-ul {
-    display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding: 0px;
-}
-
-li {
-    background-color: #ffffffa9;
-    color: rgb(38, 38, 38);
-    font-size: 15px;
-    list-style-type: none;
-    text-align: center;
-    align-items: center;
-    padding: 5px;
-    margin: 10px;
-    cursor: pointer;
-    text-transform: capitalize;
-}
-
-#historybox {
-    align-items: center
-    text-align: center;
-}
-
-/* Input form for city names */
+/* Search bar */
 .form-control {
-    display: block;
-    width: 100%;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 1.5;
-    text-align: center;
-    color: #495057;
-    background-color: white;
-    background-clip: padding-box;
-    border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	display: block;
+	width: 100%;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border-radius: 0.25rem;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-/* Buttons */
+/* Search button */
 .btn {
-    border: none;
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 12px;
-    /* position: relative;
-    flex-wrap: wrap; */
+	background-color: #0353b5;
+	border: none;
+	color: #ffffff;
+	text-decoration: none;
+	cursor: pointer;
+	font-size: 12px;
+	position: relative;
+	flex-wrap: wrap;
 }
 
-/* Clear history button */
-.clear-history {
-    background-color: #0f28c9;
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    align-items: center;
-    font-size: 12px;
-    position: relative;
-    flex-wrap: wrap;
-    border: none;
+/* List of cities searched */
+ul {
+	display: block;
+	list-style-type: disc;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding: 0px;
 }
 
-/* Right container with welcome message */
-.welcome_box {
-    border-radius: 5px;
-    background-color: #00000051;
-    border: none;
-    margin: 20px 0px 0px 0px;
-    padding: 300px 0px;
-    box-shadow: 1px 2px 5px black;
-    color: #ffffffb6;
+/* List of history of searched cities */
+li {
+	color: rgb(38, 38, 38);
+	background-color: #ffffffa3;
+	font-size: 15px;
+	list-style-type: none;
+	text-align: center;
+	align-items: center;
+	padding: 5px;
+	margin: 10px;
+	cursor: pointer;
+	text-transform: capitalize;
+	font-family: "Roboto", sans-serif;
 }
 
-/* Error message box when no city entered */
-.error_box {
-    border-radius: 5px;
-    background-color: #00000051;
-    border: none;
-    padding: 300px 0px 300px 60px;
-    margin: 20px 0 0 0;
-    box-shadow: 1px 2px 5px black;
-    color: #ffffffb6;
+/* THIS SECTION IS THE WHOLE RIGHT COLUMN OF THE PAGE */
+/* Welcome Right Container */
+.welcomeContainer {
+	border-radius: 5px;
+	background-color: #00000051;
+	border: none;
+	padding: 300px 0px;
+	margin: 20px 0px 0px 0px;
+	font-family: "Roboto", sans-serif;
+	box-shadow: 2.5px 5px 4px #000000;
+	color: #ffffffbd;
+	align-items: center;
+	text-align: center;
 }
 
-/* Forecast container */
-#forecastBox {
-    border-radius: 5px;
-    background-color: #00000051;
-    border: none;
-    padding: 140px 0px 160px 20px;
-    margin: 20px 0 0 0;
-    box-shadow: 1px 2px 5px black;
-    color: #ffffffb6;
+/* Error Message Container */
+.errorContainer {
+	border-radius: 5px;
+	background-color: #00000051;
+	border: none;
+	padding: 300px 0px 300px 60px;
+	margin: 20px 0px 0px 0px;
+	font-family: "Roboto", sans-serif;
+	box-shadow: 2.5px 5px 4px #000000;
+	color: #ffffffbd;
 }
 
- #errorMessage {
-    font-size: 30px;
- }
+/* Error message font-size */
+#errorMessage {
+	font-size: 30px;
+}
 
+/* Container for Weather report of city */
+#todayForecastContainer {
+	border-radius: 5px;
+	background-color: #00000051;
+	border: none;
+	padding: 140px 0px 160px 20px;
+	margin: 20px 0px 0px 0px;
+	font-family: "Roboto", sans-serif;
+	box-shadow: 2.5px 5px 4px #000000;
+	color: #ffffffbd;
+}
+
+/* Message that says "Today's Forecast for... */
+.messageCity {
+	font-size: 20px;
+}
+
+/* Name of the city in the right container */
 .resultsLine {
-    font-size: 30px;
-    margin: 0;
+	font-size: 30px;
+	font-family: "Roboto", sans-serif;
+	margin: 0px;
 }
 
-/* Temperature display */
+/* Temperature number of the searched city */
 #tempDisplay {
-    padding-left: 70px;
-    margin-top: 10px;
-    color: #ffffffb6;
-    font-size: 40px;
-    font-weight: 100;
-    text-align: left;
-    align-items: left;
+	padding-left: 70px;
+	margin-top: 10px;
+	color: #ffffff93;
+	font-size: 40px;
+	font-weight: 100;
+	text-align: left;
+	align-items: left;
 }
 
+/* Number temperature */
 #temperature {
-    font-size: 100px;
-    font-weight: 100;
+	font-size: 100px;
+	font-weight: 100;
+	font-family: "Roboto", sans-serif;
 }
 
-/* UV display */
+/* Farenheit symble style */
+.temp {
+	margin-top: 10px;
+	color: #ffffff93;
+	font-size: 40px;
+	font-weight: 100;
+	text-align: left;
+	align-items: left;
+}
+
+/* location of moon, sun, or cloud logo */
+.imgHeader {
+	position: absolute;
+	z-index: 4;
+	top: 170px;
+	left: 250px;
+	width: 130px;
+}
+
+/* Style for humidity, wind speed, feels like, and UV index in the right container*/
+.fahrenheit,
+p {
+	font-family: "Roboto", sans-serif;
+	font-size: 20px;
+	font-weight: 100;
+	color: #ffffff93;
+}
+
+/* UV text */
 #uv {
-    padding: 5px;
+	padding: 5px;
+	color: rgba(65, 65, 65, 0.933);
 }
 
+/* UV background */
 .uvLow {
-    background-color: green;
+	background-color: green;
 }
 
 .uvModerate {
-    background-color: yellow;
+	background-color: yellow;
 }
 
 .uvHigh {
-    background-color: orange;
+	background-color: orange;
 }
 
 .uvVeryHigh {
-    background-color: red;
+	background-color: red;
 }
 
 .uvExtremelyHigh {
-    background-color: purple;
+	background-color: purple;
 }
 
-/* Five-Day forecast */
-/* .row.display-flex {
-    display: flex;
-    flex-wrap: wrap;
+/* 5 Day Forecast */
+.forcast {
+	align-items: center;
+	background-color: rgb(227, 227, 227);
+	flex: 1;
+	padding: 10px;
+	margin: 4px;
+	float: left;
+	border-radius: 5px;
+	background-color: #ffffff69;
+	box-shadow: 2.5px 5px 4px #000000;
 }
 
-.row.display-flex > [class*="col-"] {
-    display: flex;
-    flex-direction: column;
-} */
-.forecast-list {
-    align-items: center;
-    float: left;
+/* LIST OF ALL MEDIA QUERY */
+/* Layout of 5 Day forecast when screen is the smallest */
+@media only screen and (max-width: 500px) {
+	.forcast {
+		padding: 50px;
+		margin-left: 40px;
+	}
+}
+
+/* Layout of left container when screen is reduced to smallest */
+@media only screen and (max-width: 500px) {
+	#searchBar {
+		margin: 20px 15px 0px 15px;
+	}
+}
+
+ /* Layout of right container when screen is reduced to smallest */
+@media only screen and (max-width: 500px) {
+	.welcomeContainer {
+		align-items: center;
+		padding: 100px 0px 150px 0px;
+		margin-bottom: 20px;
+	}
+}
+
+/* Layout of temperature number of searched city when screen is reduced to smallest */
+@media only screen and (max-width: 500px) {
+	#tempDisplay {
+		padding-left: 50px;
+	}
+}
+
+/* Layout of Farenheit symbol when screen is reduced to smallest */
+@media only screen and (max-width: 500px) {
+	.temp {
+		position: absolute;
+		z-index: 4;
+		top: 5px;
+		left: 160px;
+	}
+}
+
+/* Layout of moon, sun, or cloud logo when screen is reduced to smallest */
+@media only screen and (max-width: 500px) {
+	.imgHeader {
+		position: absolute;
+		z-index: 4;
+		top: 150px;
+		left: 210px;
+		width: 150px;
+	}
+}
+
+/* Layout of APP name in left box when screen is reduced to smallest */
+@media only screen and (max-width: 1850px) {
+	.navbar-brand {
+		font-size: 45px;
+		text-align: center;
+		align-items: center;
+	}
 }
